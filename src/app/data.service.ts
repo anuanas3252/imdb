@@ -16,21 +16,7 @@ export class DataService {
 
   // Added onFetchMovies() to fetch the data from API
   onFetchMovies() {
-    return this.http.get('https://imdb-api.com/en/API/Top250Movies/k_q78lyl0e')
-      .pipe(
-        map(responseData => {
-
-          console.log(responseData);
-
-          const postArray = [];
-          const movie = responseData['items']
-          for (const i in movie) {
-            postArray.push(movie[i]);
-          }
-          return postArray;
-        })
-      )
-      ;
+    return this.http.get('https://imdb-api.com/en/API/Top250Movies/k_q78lyl0e');
 
   }
 
