@@ -29,4 +29,21 @@ export class AppComponent {
 
 
   }
+
+
+  getColor(val) {
+    if (val >= 9) {
+      return 'green';
+
+    }
+    else if (val < 9 && val >= 8) {
+      return 'yellow';
+    }
+    else if (val < 8) {
+      return 'blue';
+    }
+    else {
+      return 'pink';
+    }
+  }
 }
