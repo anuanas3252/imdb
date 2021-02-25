@@ -1,0 +1,49 @@
+<br>
+
+
+
+<div class="alert alert-danger" role="alert" *ngIf="error">
+    OOPS!! - {{error}}
+</div>
+
+
+
+
+<div class="container" *ngFor="let movie of moviePosts">
+    <div class="card">
+
+        <div class="row justify-content-center">
+            <div class="col">
+                Rank : {{ movie.rank }}
+                <br>
+                Title: {{ movie.fulltitle}}
+                <br>
+                crew: {{ movie.crew}}
+                <br>
+                year : {{ movie.year}}
+            </div>
+            <div class="col">
+                <img [src]="movie.image" alt="movie.title" class="rounded float-end"
+                    style="height: 100px; width: 100px;">
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col">
+                <p [ngStyle]="{'color':getColor(movie.imDbRating)}">
+                    imDb Rating : {{ movie.imDbRating }}
+                    <br>
+                    <ngb-rating [max]="10" [rate]="movie.imDbRating" [readonly]="false"></ngb-rating>
+                </p>
+
+            </div>
+            <div class="col">
+                imDb Rating Count - {{ movie.imDbRatingCount | converter }}
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

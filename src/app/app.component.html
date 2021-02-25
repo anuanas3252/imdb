@@ -1,51 +1,19 @@
-<div class="container-fluid">
+<div class="container">
 
   <h1 class="text-center"> T o p - M o v i e s </h1>
 
   <br>
   <br>
-  <button class="btn btn-primary" (click)="onFetch()">MOVIESS</button>
+
 
   <br>
 
-  <div class="alert alert-danger" role="alert" *ngIf="error">
-    OOPS!! - {{error}}
-  </div>
 
-  <div class="container" *ngFor="let movie of moviePosts">
-    <div class="card">
+  <router-outlet></router-outlet>
 
-      <div class="row justify-content-center">
-        <div class="col">
-          Rank : {{ movie.rank }}
-          <br>
-          Title: {{ movie.fulltitle}}
-          <br>
-          crew: {{ movie.crew}}
-          <br>
-          year : {{ movie.year}}
-        </div>
-        <div class="col-md-auto">
-          <img [src]="movie.image" alt="movie.title" class="rounded float-end" style="height: 100%; width: 100%;">
-        </div>
-      </div>
 
-      <div class="row justify-content-center">
-        <div class="col">
-          <p [ngStyle]="{'color':getColor(movie.imDbRating)}">
-            imDb Rating : {{ movie.imDbRating }}
-          </p>
-        </div>
-        <div class=" col-md-auto">
-          imDb Rating Count - {{ movie.imDbRatingCount | converter }}
-        </div>
-      </div>
 
-    </div>
 
-  </div>
-
-  <li *ngFor="let movie of moviePosts">{{movie.title}}</li>
 
 
 
